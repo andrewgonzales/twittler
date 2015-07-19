@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="functions.js"></script>
   </head>
   <body>
     <button>Refresh</button>
@@ -19,18 +20,17 @@
 
         function displayTweets(){
           $section.html('');                //clear old data
-          var length = streams.home.length
-          var index = 0;
-          while(index <= length-1){
+          var index = streams.home.length-1;
+          while(index >=0){
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweet.prependTo($section);                            //Add tweet to top of <section>
+            $tweet.appendTo($section);                            //Add tweet to bottom of <section>
 
-            var timestamp = $('<p></p>');
-            timestamp.text('Tweeted on ' + tweet.created_at);
-            timestamp.appendTo($tweet);                           //Add timestamp below accompanying tweet
-            index += 1;
+            var $timestamp = $('<p></p>');
+            $timestamp.text('Tweeted on ' + tweet.created_at);
+            $timestamp.appendTo($tweet);                           //Add timestamp below accompanying tweet
+            index -= 1;
           }
         }
 
