@@ -53,3 +53,20 @@ table {
   Custom styles
   ========================================
 */
+
+body {
+	background-color: #F77A52;
+	color: #332532;
+	font: 300 18px/24px "Gudea","Open Sans", Helvetica, sans-serif;
+	margin: 0 auto;
+	width: 960 px;
+	padding-left: 50px;
+}
+
+section {
+	background-color: #A49A87;
+	width: 50%;
+	border: 1px solid #363377;
+	border-radius: 5px;
+	padding-left: 90px;
+}
