@@ -65,8 +65,34 @@ body {
 
 section {
 	background-color: #A49A87;
-	width: 50%;
+	width: 60%;
 	border: 1px solid #363377;
 	border-radius: 5px;
-	padding-left: 90px;
+	padding-left: 40px;
+}
+
+.user {
+	color: #644D52;
+	font-size: 20px;
+	font-style: italic;
+	padding: 10px 20px 10px 0;
+	text-align: left;
+	width: 20%;
+	display: inline-block;
+}
+
+.user:hover{
+	cursor: pointer;
+	color: #B2583B;
+}
+
+p {
+	font-size: 16px;
+	color: #4C483F;
+	padding: 5px 10px;
+}
+
+span {
+	text-align: left;
+	padding-left: 20px;
 }
