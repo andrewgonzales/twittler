@@ -15,7 +15,6 @@
         //$body.html('');
         var $section = $('section');
         displayTweets();
-
         $('button').on('click', displayTweets);
 
         function displayTweets(){
@@ -23,6 +22,36 @@
           var index = streams.home.length-1;
           while(index >=0){
             var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.appendTo($section);      //Add tweet to bottom of <section>
+            
+            var $user = $('<a class="user"></a>');
+            $user.text('@' + tweet.user);
+            $user.appendTo($tweet);
+
+            var $message = $('<span></span>');
+            $message.text(tweet.message);
+            $message.appendTo($tweet);
+
+            var $timestamp = $('<p></p>');
+            $timestamp.text('Tweeted on ' + tweet.created_at);
+            $timestamp.appendTo($tweet);                           //Add timestamp below accompanying tweet
+            index -= 1;
+          }
+        }
+
+        var timeline;
+        $('.user').on('click', function(){
+          var handle = $(this).text().slice(1).toString(); //remove @
+          timeline = getUserTweets(handle);
+          userTimeline();
+        });
+
+        function userTimeline(){
+          $section.html('');                //clear old data
+          var index = timeline.length-1;
+          while(index >=0){
+            var tweet = timeline[index];
             var $tweet = $('<div></div>');
             $tweet.appendTo($section);      //Add tweet to bottom of <section>
             
@@ -40,6 +69,8 @@
             index -= 1;
           }
         }
+
+
 
       });
 
