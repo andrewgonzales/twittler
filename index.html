@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href='twittler_styles.css'>
+    <link href='http://fonts.googleapis.com/css?family=Gudea:400,400italic,700' rel='stylesheet' type='text/css'>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <script src="functions.js"></script>
@@ -27,6 +29,9 @@
           event.preventDefault();
           var handle = $(this).text().slice(1).toString(); //remove @
           timeline = getUserTweets(handle);
+          if($('.refresh').length>0) {
+            $('.refresh').remove();
+          }
           var $refresh = $('<button></button>');
           $refresh.addClass('refresh');
           $refresh.text(handle);
