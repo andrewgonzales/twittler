@@ -18,14 +18,18 @@
         $('button').on('click', displayTweets);
 
         function displayTweets(){
-          $section.html('');
+          $section.html('');                //clear old data
           var length = streams.home.length
           var index = 0;
           while(index <= length-1){
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweet.prependTo($section);
+            $tweet.prependTo($section);                            //Add tweet to top of <section>
+
+            var timestamp = $('<p></p>');
+            timestamp.text('Tweeted on ' + tweet.created_at);
+            timestamp.appendTo($tweet);                           //Add timestamp below accompanying tweet
             index += 1;
           }
         }
