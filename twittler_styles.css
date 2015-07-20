@@ -71,6 +71,33 @@ section {
 	padding-left: 40px;
 }
 
+
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
+header{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+h1 {
+	font-size: 42px;
+	line-height: 52px;
+	font-weight: bold;
+}
+h3{
+	font-size: 22px;
+	line-height: 30px;
+}
+
+/*
+  ========================================
+  Tweets
+  ========================================
+*/
+
 .user {
 	color: #644D52;
 	font-size: 20px;
@@ -85,26 +112,43 @@ section {
 	cursor: pointer;
 	color: #B2583B;
 }
-header{
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-h1 {
-	font-size: 42px;
-	line-height: 52px;
-	font-weight: bold;
-}
-h3{
-	font-size: 22px;
-	line-height: 30px;
-}
+
 p {
 	font-size: 16px;
 	color: #4C483F;
 	padding: 5px 10px;
+	margin-left: 225px;
 }
 span {
 	text-align: left;
 	padding-left: 20px;
 }
 
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+button {
+	cursor: pointer;
+	background-color: #332532;
+	color: #FF974F;
+	border: 2px solid #FF974F;
+	border-radius: 10px;
+	padding: 10px 50px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: +.25em;
+}
+
+button:hover {
+	background-color: #FF974F;
+	color: #332532;
+}
+
+.refresh {
+	margin-left: 35px;
+}
